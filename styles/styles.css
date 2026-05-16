@@ -1,4 +1,6 @@
-/* --- Base Page Styles --- */
+/* ==========================================================================
+   Base Page Styles & Reset
+   ========================================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -8,7 +10,9 @@ body {
     line-height: 1.6;
 }
 
-/* --- Header & Navigation --- */
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
 header {
     background-color: #008751;
     /* Classic Nigerian Green */
@@ -36,7 +40,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* --- Main Content Layout --- */
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
 main {
     max-width: 800px;
     margin: 40px auto;
@@ -50,9 +56,14 @@ h1 {
     color: #008751;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
+    margin-top: 0;
 }
 
-/* --- Profile Image Settings --- */
+/* ==========================================================================
+   Images (Profile & Country)
+   ========================================================================== */
+/* Targets the profile picture image */
+main > img,
 .profile-img {
     width: 200px;
     height: 200px;
@@ -64,10 +75,22 @@ h1 {
     border: 3px solid #008751;
 }
 
-/* --- Aside / Feature Section --- */
+/* Targets the landscape image inside the aside */
+aside img,
+.country-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 15px 0;
+    display: block;
+}
+
+/* ==========================================================================
+   Aside / Feature Section
+   ========================================================================== */
 aside {
     background-color: #f0f7f4;
-    /* Soft green tint tint background */
+    /* Soft green tint background */
     border-left: 5px solid #008751;
     padding: 20px;
     margin-top: 30px;
@@ -79,14 +102,9 @@ aside h2 {
     color: #111;
 }
 
-.country-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin: 15px 0;
-}
-
-/* --- Footer --- */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 footer {
     text-align: center;
     padding: 20px 0;
