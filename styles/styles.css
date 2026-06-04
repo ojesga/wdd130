@@ -22,18 +22,19 @@
 body {
     font-family: var(--font-family);
     line-height: 1.6;
-
     /* Deep, dark emerald and charcoal gradient */
     background: linear-gradient(135deg, #062116 0%, #0c1412 100%);
     background-attachment: fixed;
+    padding: 30px 0 50px 0;
+}
 
-    max-width: 1100px;
+/* --- WEEK 04 REQUIREMENT: MAX-WIDTH & CENTERING CONTAINER --- */
+header,
+.grid,
+footer {
+    max-width: 840px;
     margin: 0 auto;
-    padding: 30px 25px 50px 25px;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 35px;
+    padding: 15px;
 }
 
 /* --- Header & Navigation --- */
@@ -48,68 +49,60 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+/* WEEK 04 REQUIREMENT: CSS Heading Bottom Border Decoration */
+header h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.2rem;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 15px;
 }
 
-nav a {
+/* WEEK 04 REQUIREMENT: Flex Layout on Container & Link Block Padding */
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav a {
+    display: block;
+    /* Anchor elements built as block structures */
     color: #ffffff;
     text-decoration: none;
+    /* No default text underlining decoration */
     font-weight: 600;
     font-size: 1.1rem;
-    padding: 6px 12px;
-    border-bottom: 2px solid transparent;
+    padding: 10px 20px;
+    /* Sizable tracking padding boundaries */
     transition: all 0.3s ease;
+    border-radius: 6px;
 }
 
-nav a:hover {
+header nav a:hover {
     color: var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Main Content (Profile Card) --- */
-main {
-    background-color: var(--secondary-color);
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: var(--card-shadow);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+/* --- WEEK 04 REQUIREMENT: TWO-COLUMN CSS GRID LAYOUT --- */
+.grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    /* Defines column widths (aside on left, main on right) */
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-main h1 {
-    color: #00663d;
-    /* Darker green for readability on white */
-    margin-bottom: 25px;
-    font-size: 2.2rem;
-}
-
-/* Updated per instructions to float the profile image */
-main img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #eef7f2;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    margin-bottom: 25px;
-    float: right;
-    /* Floats image to the right */
-    margin-left: 1.5rem;
-    /* Prevents text from crowding the image */
-}
-
-main p {
-    font-size: 1.2rem;
-    max-width: 650px;
-    margin: 0 auto;
-    color: #34495e;
-}
-
-/* --- Aside Section (Country Info) --- */
+/* Position explicit placement markers because of their natural HTML order */
 aside {
+    grid-column: 1;
+    grid-row: 1;
+
     background-color: var(--secondary-color);
     padding: 35px 30px;
     border-radius: 12px;
@@ -118,14 +111,43 @@ aside {
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     border-right: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-
     position: relative;
-    /* Added relative context for the absolute heading overlay */
+}
+
+main {
+    grid-column: 2;
+    grid-row: 1;
+
+    background-color: var(--secondary-color);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* --- Content Component Adjustments --- */
+main img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #eef7f2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    float: right;
+    /* Floats your profile image to the right side of the text block */
+    margin-left: 1.5rem;
+}
+
+main p {
+    font-size: 1.15rem;
+    color: #34495e;
+    margin-bottom: 20px;
 }
 
 aside img {
     width: 100%;
-    max-height: 280px;
+    max-height: 240px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -138,56 +160,29 @@ aside p {
     color: #34495e;
 }
 
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 10px;
-    font-weight: 600;
-    color: #a0aec0;
-    /* Lighter gray so text is perfectly readable on dark background */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Absolute Positioning Heading Overlay on top of Country Image */
+aside h2 {
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    color: #ffffff;
+    background-color: rgba(0, 102, 61, 0.85);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Desktop Responsive Grid Upgrade --- */
-@media (min-width: 850px) {
-    body {
-        grid-template-columns: 1.8fr 1.2fr;
-        padding-top: 50px;
-    }
-
-    header,
-    footer {
-        grid-column: span 2;
-    }
-
-    main {
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 50px;
-    }
-
-    main img {
-        margin-bottom: 25px;
-    }
-}
-
-/* --- Class Selectors --- */
-
+/* --- Class List Selectors --- */
 .box {
-    margin: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: #f4fbf7;
-    /* Light sage tint to match your luxury green theme */
+    /* Light sage tint */
     color: var(--text-color);
     border-radius: 8px;
-    /* Matches your smooth theme corners */
 }
 
-/* Styling the links within your new temple box element */
 .box li {
     margin-left: 1.5rem;
     margin-bottom: 0.5rem;
@@ -204,19 +199,31 @@ footer {
     color: var(--primary-color);
 }
 
-/* Absolute Positioning Heading Overlay */
-aside h2 {
-    position: absolute;
-    top: 50px;
-    /* Tweak this up or down to align beautifully over your image */
-    left: 50px;
-    /* Tweak this right or left to position it neatly over your image */
-    color: #ffffff;
-    /* Switched to white so it remains clear over the landscape photo */
-    background-color: rgba(0, 102, 61, 0.85);
-    /* Semi-transparent green background label */
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 1.6rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* --- Footer Area --- */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #a0aec0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        /* Stack columns vertically on smaller mobile displays */
+    }
+
+    aside,
+    main {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
