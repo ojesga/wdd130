@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Basic Quiz</title>
+    <meta name="description"
+      content="A simple, accessible online knowledge quiz covering fundamental concepts of HTML5 and CSS3.">
+    <meta name="author" content="Seyi Ojo Bamgboye">
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML and CSS Web Development Quiz</h1>
+    </header>
+
+    <main>
+        <form action="#" method="post" class="quiz-form">
+
+            <div class="form-control">
+                <label自动 for="q1">1. What does the "M" stand for in the acronym HTML?</label>
+                    <input type="text" id="q1" name="q1" placeholder="Type your answer here"
+                      required>
+            </div>
+
+            <div class="form-control">
+                <label for="q2">2. In your own words, describe the main purpose of cascading style
+                    sheets (CSS):</label>
+                <textarea id="q2" name="q2" rows="4" placeholder="Explain your answer briefly..."
+                  required></textarea>
+            </div>
+
+            <div class="form-control">
+                <label for="q3">3. Which HTML element is the correct semantic container for the main
+                    navigational links of a website?</label>
+                <select id="q3" name="q3" required>
+                    <option value="" selected disabled>Choose One ...</option>
+                    <option value="navigation">&lt;navigation&gt;</option>
+                    <option value="nav">&lt;nav&gt;</option>
+                    <option value="navbar">&lt;navbar&gt;</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label for="q4">4. How many heading elements are natively available in HTML layout
+                    configuration (e.g., from h1 down to hX)?</label>
+                <input type="number" id="q4" name="q4" min="1" max="10" placeholder="e.g., 3"
+                  required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Submit Quiz</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Fundamentals | Seyi Ojo Bamgboye</p>
+    </footer>
+
+</body>
+
+</html>

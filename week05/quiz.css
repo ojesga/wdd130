@@ -1,0 +1,107 @@
+/* ==========================================================================
+   CORE SITE BASELINES
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    margin: 0;
+    padding: 20px;
+}
+
+header,
+footer {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+h1 {
+    color: #0f172a;
+    font-size: 1.8rem;
+}
+
+/* ==========================================================================
+   FORM CONTAINER LAYOUT (Single-Column Focus)
+   ========================================================================== */
+.quiz-form {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Vertical block formatting for label and inputs pairing stacks */
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   INPUT ELEMENT TYPOGRAPHY & INTERACTION
+   ========================================================================== */
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    /* Elements respect boundary borders safely */
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    background-color: #f8fafc;
+    font-size: 0.95rem;
+    color: #0f172a;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Accessible focus outline ring styling */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    /* Blocks width breaks while preserving height sizing */
+}
+
+/* ==========================================================================
+   ACTION HOVER BUTTON ACTIONS
+   ========================================================================== */
+.form-actions {
+    margin-top: 32px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
