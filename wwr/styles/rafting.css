@@ -211,6 +211,212 @@ header a:hover {
 }
 
 /* ==========================================================================
+   W05 RAFTING PROJECT: CONTACT US PAGE LAYOUT ADDITIONS
+   ========================================================================== */
+.contact-layout {
+    padding: 10px 16px;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Info & Map 2-Column Grid Setup */
+.info-map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-details {
+    background-color: #f0f4f8;
+    border-left: 6px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 0;
+}
+
+.contact-details h2 {
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 1.05rem;
+}
+
+.map-frame iframe {
+    width: 100%;
+    height: 280px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Profiles Section: 3-Column Grid */
+.profiles-section {
+    margin-bottom: 50px;
+}
+
+.profiles-section h2,
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-card {
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding-bottom: 12px;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.profile-card h3 {
+    font-size: 1.15rem;
+    margin: 10px 0 4px 0;
+    color: var(--primary-color);
+}
+
+.profile-card .title {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Message Submission Form Block Layout */
+.form-section {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.styled-form .form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.styled-form label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--accent1-color);
+}
+
+.styled-form input[type="text"],
+.styled-form input[type="email"],
+.styled-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--body-font);
+    background-color: #fafafa;
+    transition: border-color 0.2s ease;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+}
+
+/* Radio Buttons and Fieldset Styling */
+.radio-block {
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 16px !important;
+    /* Forces layout boxes validation match */
+}
+
+.radio-block legend {
+    font-weight: bold;
+    padding: 0 8px;
+    color: var(--primary-color);
+}
+
+.radio-row,
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.checkbox-row {
+    flex-direction: row;
+    /* Overriding default block stacking flex formatting */
+    margin-bottom: 24px;
+}
+
+.radio-row input,
+.checkbox-row input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.radio-row label,
+.checkbox-row label {
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Accessible & Visually Distinct Submit Button */
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(2, 72, 115, 0.2);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent1-color);
+}
+
+.submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* ==========================================================================
    FOOTER & SOCIALS SECTION (Flex Layout)
    ========================================================================== */
 footer {
@@ -264,6 +470,14 @@ footer {
     .adventure-gallery {
         grid-template-columns: repeat(2, 1fr);
         /* Adjusts grid into columns of 2 on small screens */
+    }
+
+    /* Mobile additions for Contact page structural layout tags */
+    .info-map-grid,
+    .profiles-grid {
+        grid-template-columns: 1fr;
+        /* Stacks map/info and guides cleanly in 1 column */
+        gap: 20px;
     }
 
     footer {
